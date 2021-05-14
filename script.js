@@ -45,6 +45,8 @@ function playRound() {
 
 //GAME OVER RESULTS//
 function gameOver() {
+
+  restoreColor();
   if (playerWins == 3) {
     const randomExcuses = excuses[Math.floor(Math.random() * excuses.length)];
     const results = document.querySelector('.results');
@@ -54,6 +56,7 @@ function gameOver() {
     let audio = new Audio("sounds/gamewin.wav");
     audio.play();
     winFlash();
+    changeColorWin();
     totalPlayerWins++
     const totalWins = document.querySelector('.totalWins');
     totalWins.innerText = "Human Wins: [" + totalPlayerWins + "]....." + "Computer Wins: [" + totalComputerWins + "]"
@@ -66,14 +69,78 @@ function gameOver() {
     let audio = new Audio("sounds/gamelose.wav");
     audio.play();
     loseFlash();
+    changeColorLose();
     totalComputerWins++
     const totalWins = document.querySelector('.totalWins');
     totalWins.innerText = "Human Wins: [" + totalPlayerWins + "]....." + "Computer Wins: [" + totalComputerWins + "]"
   }
 }
 
+//CHANGE COLORS//
+function changeColorLose() {
+  let border = document.querySelector('.results');
+      border.style.borderColor = "red";
+  let total = document.querySelector('.totalWins');
+      total.style.color = "red";
+
+  setTimeout(function() {
+    let title = document.querySelector('.ascii-title');
+    title.style.color = "red";
+  }, 100);
+  setTimeout(function() {
+    let title = document.querySelector('.ascii-title');
+    title.style.color = "lime";
+  }, 200);
+  setTimeout(function() {
+    let title = document.querySelector('.ascii-title');
+    title.style.color = "red";
+  }, 300);
+  setTimeout(function() {
+    let title = document.querySelector('.ascii-title');
+    title.style.color = "lime";
+  }, 400);
+}
+
+function changeColorWin() {
+  let border = document.querySelector('.results');
+      border.style.borderColor = "blue";
+  let total = document.querySelector('.totalWins');
+      total.style.color = "blue";
+
+      setTimeout(function() {
+        let title = document.querySelector('.ascii-title');
+        title.style.color = "cyan";
+      }, 400);
+      setTimeout(function() {
+        let title = document.querySelector('.ascii-title');
+        title.style.color = "magenta";
+      }, 600);
+      setTimeout(function() {
+        let title = document.querySelector('.ascii-title');
+        title.style.color = "yellow";
+      }, 1000);
+      setTimeout(function() {
+        let title = document.querySelector('.ascii-title');
+        title.style.color = "cyan";
+      }, 1400);
+      setTimeout(function() {
+        let title = document.querySelector('.ascii-title');
+        title.style.color = "lime";
+      }, 1600);
+
+}
+
+function restoreColor() {
+  let border = document.querySelector('.results');
+      border.style.borderColor = "gray";
+  let total = document.querySelector('.totalWins');
+      total.style.color = "gray";
+};
+
+
 //END FLASHES//
 function loseFlash() {
+
   setTimeout(function() {
     let background = document.querySelector(".results");
     background.style.background = "red";
