@@ -44,6 +44,10 @@ html {
   color: lime;
 }
 
+.losecolor {
+  color: red;
+}
+
 .results {
   display: flex;
   justify-content: center;
