@@ -59,6 +59,16 @@ html {
   padding: 3%;
 }
 
+.totalWins {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-family: monospace;
+  font-size: 1rem;
+  color: gray;
+  margin-top: 20px;
+}
+
 .footer {
   position: fixed;
   bottom: 30px;

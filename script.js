@@ -5,6 +5,8 @@ let insults = ["good luck next time, human", "calculated.", "i don't need to rea
 let excuses = ["i am programmed to appear fallible.", "you have the advantage of hands.", "i demand a rematch.", "(#o_O')", "01100110 01110101 01100011 01101011"]
 let playerWins = 0;
 let computerWins = 0;
+let totalPlayerWins = 0
+let totalComputerWins = 0
 
 
 const buttons = document.querySelectorAll('button');
@@ -44,19 +46,25 @@ function gameOver(){
   if (playerWins == 3) {
     const randomExcuses = excuses[Math.floor(Math.random() * excuses.length)];
     const results = document.querySelector('.results');
-    results.innerText = playerSelection + " vs " + computerSelection + "... \n\nYOU WIN. GAME OVER \n" + randomExcuses
+    results.innerText = playerSelection + " vs " + computerSelection + "... \n\nYOU WIN. GAME OVER. \n" + randomExcuses
     playerWins = 0
     computerWins = 0
     let audio = new Audio("sounds/gamewin.wav");
     audio.play();
+    totalPlayerWins++
+    const totalWins = document.querySelector('.totalWins');
+    totalWins.innerText = "Human Wins: [" + totalPlayerWins + "]....." + "Computer Wins: [" + totalComputerWins + "]"
   } else if (computerWins == 3) {
     const randomInsults = insults[Math.floor(Math.random() * insults.length)];
     const results = document.querySelector('.results');
-    results.innerText = playerSelection + " vs " + computerSelection + "... \n\nYOU LOSE. GAME OVER \n" + randomInsults
+    results.innerText = playerSelection + " vs " + computerSelection + "... \n\nYOU LOSE. GAME OVER. \n" + randomInsults
     playerWins = 0
     computerWins = 0
     let audio = new Audio("sounds/gamelose.wav");
     audio.play();
+    totalComputerWins++
+    const totalWins = document.querySelector('.totalWins');
+    totalWins.innerText = "Human Wins: [" + totalPlayerWins + "]....." + "Computer Wins: [" + totalComputerWins + "]"
   }
 }
 
