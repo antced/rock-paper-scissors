@@ -1,64 +1,56 @@
-// const options = ["rock", "paper", "scissors"];
-// const computerSelection = computerPlay();
-// const playerSelection = prompt("What is your choice?").toLowerCase()
-// let playerWins = 0
-// let computerWins = 0
-//
-//
-// function computerPlay() {
-//   let choice = options[Math.floor(Math.random() * options.length)]
-//   return choice
-// };
-//
-// function playRound(player, computer) {
-//
-// if (((player === "rock") && (computer === "scissors")) ||
-//   ((player === "paper") && (computer === "rock")) ||
-//   ((player === "scissors") && (computer === "paper"))) {
-//   playerWins++
-//   return "You win! " + player + " beats " + computer + "!"
-// } else if (player === computer) {
-//   return "It's a tie!"
-// } else if (!options.includes(player)) {
-//   alert("Invalid input!")
-// } else {
-//   computerWins++
-//   return "You lose!"
-//   }
-// }
-//
-// function game(){
-//   computerPlay()
-//   console.log(playRound(playerSelection, computerSelection))
-//   console.log("player wins =" + playerWins)
-//   console.log("computer wins =" + computerWins)
-// }
-//
-// game()
+//DECLARING VARIABLES//
+
 let options = ["rock", "paper", "scissors"];
 let playerWins = 0;
 let computerWins = 0;
 
+
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+  button.addEventListener('click', () => {
+    playerSelection = button.name;
+    console.log(playRound());
+  });
+});
+//PLAY ROUND FUNCTION//
+
 function playRound() {
 
   const computerSelection = options[Math.floor(Math.random() * options.length)];
-  const playerSelection = prompt("What is your choice?").toLowerCase();
 
   if (((playerSelection === "rock") && (computerSelection === "scissors")) ||
     ((playerSelection === "paper") && (computerSelection === "rock")) ||
     ((playerSelection === "scissors") && (computerSelection === "paper"))) {
     playerWins++
-    return "You win! " + playerSelection + " beats " + computerSelection + "!"
+    const results = document.querySelector('.results');
+    results.innerText = playerSelection + " vs " + computerSelection + "... \n\nyou win! score: " + playerWins + " | " + computerWins
   } else if (playerSelection === computerSelection) {
-    return "It's a tie!"
-  } else if (!options.includes(playerSelection)) {
-    alert("Invalid input!")
+    const results = document.querySelector('.results');
+    results.innerText = playerSelection + " vs " + computerSelection + "... \n\nyou tie! score: " + playerWins + " | " + computerWins
   } else {
     computerWins++
-    return "You lose!"
+    const results = document.querySelector('.results');
+    results.innerText = playerSelection + " vs " + computerSelection + "... \n\nyou lose! score: " + playerWins + " | " + computerWins
   }
+
 }
 
-console.log(playRound(),"P:" + playerWins,"C:" + computerWins)
-console.log(playRound(),playerWins, computerWins)
-console.log(playRound(),playerWins, computerWins)
+// function loopGame() {
+//   for (let i = 0; i < 5; i++) {
+//     console.log(playRound(), playerWins, computerWins)
+//   }
+//   if (playerWins > computerWins) {
+//     console.log("You win!")
+//   } else {
+//     console.log("You lose!")
+//   }
+// }
+
+
+//CALLS//
+
+// console.log(playRound(), playerWins, computerWins)
+// console.log(playRound(), playerWins, computerWins)
+// console.log(playRound(), playerWins, computerWins)
+// console.log(playRound(), playerWins, computerWins)
+// console.log(playRound(), playerWins, computerWins)

@@ -1,0 +1,85 @@
+/* BACKGROUND */
+
+html {
+  background-color: black;
+}
+
+/* HEADER */
+
+.slogan {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  font-family: monospace;
+  color: lime;
+}
+.ascii-title {
+  display: flex;
+  justify-content: center;
+  margin-top: 0;
+  font-family: monospace;
+  white-space: pre;
+  color: lime;
+
+}
+
+/* BUTTONS */
+
+.bigbuttons {
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  height: 300px;
+  width: 300px;
+  color: gray;
+  background-color: black;
+  border-style: none;
+  border-color: gray;
+  font-family: monospace;
+  white-space: pre;
+}
+.button:hover {
+  color: lime;
+}
+
+.results {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-family: monospace;
+  font-size: 1rem;
+  color: lime;
+  border-style: dashed;
+  border-width: 2px;
+  border-color: gray;
+  margin-left: 30%;
+  margin-right: 30%;
+  padding: 3%;
+}
+
+.footer {
+  position: fixed;
+  bottom: 30px;
+  width: 100%;
+  text-align: center;
+  font-family: monospace;
+  color: gray;
+  text-decoration: none;
+}
+a {
+  color: gray;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+a:visited {
+  color: gray;
+  text-decoration: none;
+}
+a:active {
+  color: gray;
+  text-decoration: none;
+}
