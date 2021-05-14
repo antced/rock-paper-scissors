@@ -13,7 +13,7 @@ buttons.forEach((button) => {
     playerSelection = button.name;
     computerSelection = options[Math.floor(Math.random() * options.length)];
     console.log(playRound());
-    let audio = new Audio("/sounds/click.wav");
+    let audio = new Audio("sounds/click.wav");
     audio.play();
   });
 });
@@ -47,7 +47,7 @@ function gameOver(){
     results.innerText = playerSelection + " vs " + computerSelection + "... \n\nYOU WIN. GAME OVER \n" + randomExcuses
     playerWins = 0
     computerWins = 0
-    let audio = new Audio("/sounds/gamewin.wav");
+    let audio = new Audio("sounds/gamewin.wav");
     audio.play();
   } else if (computerWins == 3) {
     const randomInsults = insults[Math.floor(Math.random() * insults.length)];
@@ -55,7 +55,7 @@ function gameOver(){
     results.innerText = playerSelection + " vs " + computerSelection + "... \n\nYOU LOSE. GAME OVER \n" + randomInsults
     playerWins = 0
     computerWins = 0
-    let audio = new Audio("/sounds/gamelose.wav");
+    let audio = new Audio("sounds/gamelose.wav");
     audio.play();
   }
 }
