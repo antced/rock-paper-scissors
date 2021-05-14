@@ -23,14 +23,14 @@ function playRound() {
     ((playerSelection === "scissors") && (computerSelection === "paper"))) {
     playerWins++
     const results = document.querySelector('.results');
-    results.innerText = playerSelection + " vs " + computerSelection + "... \n\nyou win! score: " + playerWins + " | " + computerWins
+    results.innerText = playerSelection + " vs " + computerSelection + "... \n\nhuman wins. score: " + playerWins + " | " + computerWins
   } else if (playerSelection === computerSelection) {
     const results = document.querySelector('.results');
-    results.innerText = playerSelection + " vs " + computerSelection + "... \n\nyou tie! score: " + playerWins + " | " + computerWins
+    results.innerText = playerSelection + " vs " + computerSelection + "... \n\nit's a tie. score: " + playerWins + " | " + computerWins
   } else {
     computerWins++
     const results = document.querySelector('.results');
-    results.innerText = playerSelection + " vs " + computerSelection + "... \n\nyou lose! score: " + playerWins + " | " + computerWins
+    results.innerText = playerSelection + " vs " + computerSelection + "... \n\ncomputer wins. score: " + playerWins + " | " + computerWins
   }
 
 }
